@@ -1,0 +1,11 @@
+header {
+ height: 400px;
+ width: 100%;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ background-color: thistle;
+ background-image: url(file:///Users/stefanichhor/Downloads/black-linen.png);
+}
+

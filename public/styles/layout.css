@@ -15,9 +15,18 @@ html {
  */
 
 body {
+  font-family: 'source sans pro', sans-serif;
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+ width: 90%;
+ align-self: center;
+ background-color: #f4f1ec;
 }
 
 /*
