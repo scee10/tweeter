@@ -4,6 +4,8 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+// const { json } = require("express/lib/response");
+
 // Test / driver code (temporary). Eventually will get this from the server.
 
 
@@ -70,8 +72,23 @@ const createTweetElement = function(tweet) {
  return $tweet;
 }
 
-$(document).ready(function () {
+const loadTweets = function () {
 
+}
+
+$(document).ready(function () {
+ // rendering tweets on browser
  renderTweets(tweetData);
 
+ const $form = $('.submit-form')
+
+ $form.submit(function(event) {
+  // prevent the post request
+  event.preventDefault();
+
+  //post the data instead on same page
+  const serializedTweet = $(event.target).serialize();
+  $.post('/tweets/', serializedTweet)
+
+ })
 })
