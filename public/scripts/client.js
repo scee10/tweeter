@@ -9,16 +9,25 @@
 // Test / driver code (temporary). Eventually will get this from the server.
 
 const renderTweets = function(tweets) {
-  // loops through tweets
-  // calls createTweetElement for each tweet
-  // takes return value and appends it to the tweets container
 
+ $('.tweet-container').empty();
+
+ // loops through tweets
+ // calls createTweetElement for each tweet
+ // takes return value and appends it to the tweets container
  for (let tweet of tweets) {
   $('.tweet-container').prepend(createTweetElement(tweet))
  }
 }
 
 const createTweetElement = function(tweet) {
+
+ const escape = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+ };
+
  let $tweet = $(`
   <article class ="box">
   <header class="dummy-tweets"> 
@@ -29,7 +38,7 @@ const createTweetElement = function(tweet) {
     </span>
   </header>
   <div class="middle-section">
-   ${tweet.content.text}
+   ${escape(tweet.content.text)}
   </div>
   <footer class="footer">
     <span class="bottom">
@@ -81,9 +90,8 @@ $(document).ready(function () {
    type: "POST",
    url: '/tweets/',
    data: serializedTweet,
-  });
-
+  })
+  .then((data) => {loadTweets()})
+  .catch(err => {console.log('err', error)})
  })
-
- loadTweets();
 })
