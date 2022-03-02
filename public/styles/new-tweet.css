@@ -22,7 +22,7 @@ button {
  display: flex;
  border: none;
  outline: none;
- border-bottom: 0.1em solid black;
+ border-bottom: 0.2em solid rgba(0, 0, 0, 0.796);
 }
 
 .bottom-tweet-section {

@@ -1,3 +1,100 @@
 .tweet-container {
- background-color: red;
+ display: flex;
+ flex-direction: column;
+ width: 100%;
+ padding-top: 2em;
+ padding-bottom: 2em;
+}
+
+article.box {
+ display: flex;
+ flex-direction: column;
+ border: 0.2em solid rgba(0, 0, 0, 0.796);
+ padding: 0.3em;
+ padding-top: 0;
+}
+
+article.box:hover {
+ box-shadow: 5px 7px #888888;
+}
+
+header.dummy-tweets {
+ display: flex;
+ height: 3em;
+ background-color: #f4f1ec;
+}
+
+.name-and-tag {
+ display: flex;
+ flex-direction: row;
+ width: 100%;
+ justify-content: space-between;
+ align-items: baseline;
+ padding-right: 0.5em;
+ padding-left: 0.5em;
+ font-size: 25px;
+}
+
+.fa-otter {
+ display: flex;
+ color:black;
+ padding-right: none;
+}
+
+.name {
+ display: flex;
+ margin-left: 0em;
+}
+
+ .name {
+ display: flex;
+ width: 100%;
+ justify-content: start;
+ color: rgba(0, 0, 0, 0.796);
+ margin-left: 0.5em;
+}
+
+.socialtag {
+ color: rgba(136, 136, 136, 0.618);
+} 
+
+.middle-section {
+ display: block;
+ width: 100%;
+ padding-top: 0.5em;
+ padding-left: 0.5em;
+ padding-bottom: 0.25em;
+}
+
+footer.footer {
+ display: flex;
+ justify-content: space-between;
+ border-top: 0.2em solid black;
+ width: 100%;
+}
+
+.bottom {
+ display: flex;
+ justify-content: space-between;
+ align-items: baseline;
+ background-color: #f4f1ec;
+ width: 100%;
+ padding-right: 1em;
+ padding-left: 1em;
+ padding-top: 5px;
+ padding-bottom: 10px;
+ font-size: 16px;
+}
+
+.icons {
+ display: flex;
+}
+
+.fa-flag, .fa-retweet, .fa-heart {
+ padding-left: 10px;
+ color: thistle;
+}
+
+.fa-flag:hover, .fa-retweet:hover, .fa-heart:hover {
+ color: rgb(244, 151, 167);
 }
