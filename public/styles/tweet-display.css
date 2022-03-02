@@ -12,7 +12,6 @@ article.box {
  flex-direction: column;
  border: 0.2em solid rgba(0, 0, 0, 0.796);
  padding: 0.3em;
- padding-top: 0;
  margin-top: 20px;
 }
 
@@ -31,7 +30,7 @@ header.dummy-tweets {
  flex-direction: row;
  width: 100%;
  justify-content: space-between;
- align-items: baseline;
+ align-items: center;
  padding-right: 0.5em;
  padding-left: 0.5em;
  font-size: 25px;
