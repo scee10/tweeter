@@ -48,7 +48,10 @@ const createTweetElement = function(tweet) {
 
 const loadTweets = function () {
 
- $.ajax({method: "GET", url: '/tweets', dataType: 'JSON'})
+ $.ajax({
+  method: "GET", 
+  url: '/tweets', 
+  dataType: 'JSON'})
   .then(posts => {
    renderTweets(posts)
   })
@@ -57,17 +60,30 @@ const loadTweets = function () {
 }
 
 $(document).ready(function () {
- 
- loadTweets();
 
  const $form = $('.submit-form')
  $form.submit(function(event) {
+
   // prevent the post request
   event.preventDefault();
+  
+  const textArea = $("textarea").val().length;
+  
+  if (textArea > 140) {
+   return alert('Oops! This tweet is too long')
+  } else if (textArea === 0 || textArea === null) {
+   return alert('Oops! You did not tweet anything!')
+  } 
 
   //post the data instead on same page
   const serializedTweet = $(event.target).serialize();
-  $.post('/tweets/', serializedTweet)
+  $.ajax({
+   type: "POST",
+   url: '/tweets/',
+   data: serializedTweet,
+  });
 
  })
+
+ loadTweets();
 })
