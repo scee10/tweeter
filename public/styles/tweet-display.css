@@ -4,6 +4,7 @@
  width: 100%;
  padding-top: 2em;
  padding-bottom: 2em;
+ margin-top:10px;
 }
 
 article.box {
@@ -12,6 +13,7 @@ article.box {
  border: 0.2em solid rgba(0, 0, 0, 0.796);
  padding: 0.3em;
  padding-top: 0;
+ margin-top: 20px;
 }
 
 article.box:hover {
@@ -39,11 +41,6 @@ header.dummy-tweets {
  display: flex;
  color:black;
  padding-right: none;
-}
-
-.name {
- display: flex;
- margin-left: 0em;
 }
 
  .name {
