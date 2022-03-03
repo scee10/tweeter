@@ -87,19 +87,21 @@ $(document).ready(function () {
   $('.error').slideUp()
   //post the data instead on same page
   const serializedTweet = $(event.target).serialize();
+  
   $.ajax({
    type: "POST",
    url: '/tweets/',
    data: serializedTweet,
   })
-  .then((data) => { 
+  .then((data) => {
+   $('.counter').text('140')
    $('.submit-form')[0].reset() 
   })
-  .then((data) => 
-  {loadTweets()
+  .then((data) => {
+  loadTweets()
   })
-  .catch(err => 
-   {console.log('err', error)
+  .catch(err => {
+  console.log('err', error)
   })
 
  })
