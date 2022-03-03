@@ -79,11 +79,14 @@ $(document).ready(function () {
   const textArea = $("textarea").val().length;
   
   if (textArea > 140) {
-   return alert('Oops! This tweet is too long')
+   return $('.error').text('🙀 OOPS! This tweet is too long.').slideDown()
+
   } else if (textArea === 0 || textArea === null) {
-   return alert('Oops! You did not tweet anything!')
+   return $('.error').text('🤔 OOPS! You did not tweet anything...').slideDown()
+
   } 
 
+  $('.error').slideUp()
   //post the data instead on same page
   const serializedTweet = $(event.target).serialize();
   $.ajax({
@@ -93,5 +96,6 @@ $(document).ready(function () {
   })
   .then((data) => {loadTweets()})
   .catch(err => {console.log('err', error)})
+
  })
 })
