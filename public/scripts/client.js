@@ -1,23 +1,16 @@
-// prepends current to entire tweet container
-const renderTweets = function(tweets) {
- $('.tweet-container').empty();
+// --------------------- FUNCTIONS --------------------- //
 
- for (let tweet of tweets) {
-  // calls createTweetElement for each tweet
-  // takes return value and appends it to the tweets container
-  $('.tweet-container').prepend(createTweetElement(tweet))
- }
-}
-
+// creates a new tweet
 const createTweetElement = function(tweet) {
- const escape = function (str) {
-  let div = document.createElement("div");
-  div.appendChild(document.createTextNode(str));
-  return div.innerHTML;
- };
-
- let $tweet = $(`
-  <article class ="box">
+  // prevents xxs attacks
+  const escape = function(str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+  // article HTML structure for new tweet
+  let $tweet = $(
+    `<article class ="box">
   <header class="dummy-tweets"> 
       <span class="name-and-tag">
         <img src="${tweet.user.avatars}"/>
@@ -38,64 +31,74 @@ const createTweetElement = function(tweet) {
   </span>
   </span>
   </footer>
- </article>
-  `);
- return $tweet;
-}
+ </article>`
+  );
+  return $tweet;
+};
 
-const loadTweets = function () {
+// prepends current tweet to entire tweet container
+const renderTweets = function(tweets) {
+  $('.tweet-container').empty();
+  for (let tweet of tweets) {
+    // takes return value and appends it to the tweets container
+    $('.tweet-container').prepend(createTweetElement(tweet));
+  }
+};
 
- $.ajax({
-  method: "GET", 
-  url: '/tweets', 
-  dataType: 'JSON'})
-  .then(posts => {
-   renderTweets(posts)
-  })
-  .catch(err => 
-   {console.log('err', error)
-  }) 
-
-}
-
-$(document).ready(function () {
-
- loadTweets()
-
- const $form = $('.submit-form')
- $form.submit(function(event) {
-  // prevent the post request
-  event.preventDefault();
-  
-  const textArea = $("textarea").val().length;
-  
-  if (textArea > 140) {
-   return $('.error').text('🙀 OOPS! This tweet is too long.').slideDown()
-
-  } else if (textArea === 0 || textArea === null) {
-   return $('.error').text('🤔 OOPS! You did not tweet anything...').slideDown()
-
-  } 
-
-  $('.error').slideUp()
-  //post the data instead on same page
-  const serializedTweet = $(event.target).serialize();
-  
+// load tweets on page
+const loadTweets = function() {
   $.ajax({
-   type: "POST",
-   url: '/tweets/',
-   data: serializedTweet,
-  })
-  .then((data) => {
-   $('.counter').text('140')
-   $('.submit-form')[0].reset() 
-  })
-  .then((data) => {
-  loadTweets()
-  })
-  .catch(err => {
-  console.log('err', error)
-  })
+    method: "GET",
+    url: '/tweets',
+    dataType: 'JSON'})
+    .then(posts => {
+      renderTweets(posts);
+    })
+    .catch(err => {
+      console.log('err', error);
+    });
+};
 
- })
-})
+// --------------------- ON DOCUMENT READY ---------------------- //
+ 
+$(document).ready(function() {
+  // loadtweets right away
+  loadTweets();
+
+  // --------------- > SUBMITTING FORM < ---------------
+  const $form = $('.submit-form');
+  $form.submit(function(event) {
+  // prevent the redirect to /tweets/ on submit
+    event.preventDefault();
+
+    // setting length of textarea
+    const textArea = $("textarea").val().length;
+
+    //conditionals to display appropriate error messages if length is > 140 or < 0
+    if (textArea > 140) {
+      return $('.error').text('🙀 OOPS! This tweet is too long.').slideDown();
+    } else if (textArea === 0 || textArea === null) {
+      return $('.error').text('🤔 OOPS! You did not tweet anything...').slideDown();
+    }
+    $('.error').slideUp();
+
+    //after submitting tweet
+    const serializedTweet = $(event.target).serialize();
+    $.ajax({
+      type: "POST",
+      url: '/tweets/',
+      data: serializedTweet,
+    })
+    //reset counter and text area
+      .then((data) => {
+        $('.counter').text('140');
+        $('.submit-form')[0].reset();
+      })
+      .then((data) => {
+        loadTweets();
+      })
+      .catch(err => {
+        console.log('err', error);
+      });
+  });
+});

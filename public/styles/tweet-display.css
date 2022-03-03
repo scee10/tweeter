@@ -96,16 +96,15 @@ footer.footer {
  color: rgb(244, 151, 167);
 }
 
+/* CSS for Desktop (min of 1024px) */
 @media only screen and (min-width: 1024px) {
-
-.tweet-container{
- display: flex;
- flex-direction: column;
- width: 70%;
- padding-top: 1em;
- padding-bottom: 2em;
- margin-top: 0.5em;
-}  
-
+ .tweet-container{
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  padding-top: 1em;
+  padding-bottom: 2em;
+  margin-top: 0.5em;
+ }  
 }
 

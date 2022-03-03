@@ -46,25 +46,24 @@ button {
  color: red
 }
 
+/* CSS for Desktop (min of 1024px) */
 @media only screen and (min-width: 1024px) {
+ .container {
+  margin-top: 7em;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ }
 
-.container {
- margin-top: 7em;
- width: 100%;
- display: flex;
- flex-direction: column;
- justify-content: center;
- align-items: center;
-}
+ .new-tweet {
+  width: 70%;
+ }
 
-.new-tweet {
- width: 70%;
-}
-
-.submit-form  {
- display: flex; 
- flex-direction: column;
-}  
- 
+ .submit-form  {
+  display: flex; 
+  flex-direction: column;
+ }  
 }
 
