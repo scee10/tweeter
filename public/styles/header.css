@@ -8,6 +8,7 @@
  align-items: center;
  justify-content: center;
  background-color: thistle;
+ background-image: url("https://www.transparenttextures.com/patterns/arches.png");
 }
 
 /* CSS for Desktop (min of 1024px) */
