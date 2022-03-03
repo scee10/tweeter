@@ -20,8 +20,8 @@ $(document).ready(function() {
    // remove class if its not less than 0
    counter.removeClass('red')
   };
- })
 
+ })
 
 });
 

@@ -6,10 +6,7 @@
 
 // const { json } = require("express/lib/response");
 
-// Test / driver code (temporary). Eventually will get this from the server.
-
 const renderTweets = function(tweets) {
-
  $('.tweet-container').empty();
 
  // loops through tweets
@@ -64,7 +61,9 @@ const loadTweets = function () {
   .then(posts => {
    renderTweets(posts)
   })
-  .catch(err => {console.log('err', error)}) 
+  .catch(err => 
+   {console.log('err', error)
+  }) 
 
 }
 
@@ -72,7 +71,6 @@ $(document).ready(function () {
 
  const $form = $('.submit-form')
  $form.submit(function(event) {
-
   // prevent the post request
   event.preventDefault();
   
@@ -94,8 +92,15 @@ $(document).ready(function () {
    url: '/tweets/',
    data: serializedTweet,
   })
-  .then((data) => {loadTweets()})
-  .catch(err => {console.log('err', error)})
+  .then((data) => { 
+   $('.submit-form')[0].reset() 
+  })
+  .then((data) => 
+  {loadTweets()
+  })
+  .catch(err => 
+   {console.log('err', error)
+  })
 
  })
 })
