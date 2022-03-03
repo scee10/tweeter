@@ -1,3 +1,4 @@
+/* CSS for displaying tweets */
 .tweet-container {
  display: flex;
  flex-direction: column;

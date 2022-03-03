@@ -65,7 +65,7 @@ $(document).ready(function() {
   // loadtweets right away
   loadTweets();
 
-  // --------------- > SUBMITTING FORM < ---------------
+  // --------------- > SUBMITTING FORM < --------------- //
   const $form = $('.submit-form');
   $form.submit(function(event) {
   // prevent the redirect to /tweets/ on submit
