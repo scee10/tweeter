@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+
+    <!-- Disable Viewport Zooming -->
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
 
@@ -53,7 +57,6 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
-        <h2>Compose Tweet</h2>
         <form method="POST" action="/tweets/" class ="submit-form">
           <div class="error"></div>
           <div class="composing-tweet">
@@ -68,30 +71,7 @@
 
         </form>
       </section>
-
       <section class="tweet-container">
-        <!-- <article class ="box">
-          <header class="dummy-tweets"> 
-              <span class="name-and-tag">
-                <i class="fa-solid fa-otter"></i>
-                <p class="name">Barney</p>
-                <p class="socialtag">@barneyIsPurple</p> 
-            </span>
-          </header>
-          <div class="middle-section">
-            Hello World!
-          </div>
-          <footer class="footer">
-            <span class="bottom">
-            <span>10 days ago</span>
-            <span class="icons">
-              <i class="fa-solid fa-flag"></i>
-              <i class="fa-solid fa-retweet"></i>
-              <i class="fa-solid fa-heart"></i>
-          </span>
-          </span>
-          </footer>
-        </article> -->
       </section>
     </main>
   </body>

@@ -1,3 +1,7 @@
+.submit-form {
+ margin-top: 1em;
+}
+
 button {
  background-color: #4056A1;
  font-family: 'bungee';
@@ -9,7 +13,6 @@ button {
 }
 
 .error {
-
  display: none;
  font-style: italic;
  font-weight: bolder;
@@ -42,3 +45,26 @@ button {
 .red {
  color: red
 }
+
+@media only screen and (min-width: 1024px) {
+
+.container {
+ margin-top: 7em;
+ width: 100%;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+}
+
+.new-tweet {
+ width: 70%;
+}
+
+.submit-form  {
+ display: flex; 
+ flex-direction: column;
+}  
+ 
+}
+

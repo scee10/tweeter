@@ -1,24 +1,15 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
-
-// const { json } = require("express/lib/response");
-
+// prepends current to entire tweet container
 const renderTweets = function(tweets) {
  $('.tweet-container').empty();
 
- // loops through tweets
- // calls createTweetElement for each tweet
- // takes return value and appends it to the tweets container
  for (let tweet of tweets) {
+  // calls createTweetElement for each tweet
+  // takes return value and appends it to the tweets container
   $('.tweet-container').prepend(createTweetElement(tweet))
  }
 }
 
 const createTweetElement = function(tweet) {
-
  const escape = function (str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
@@ -68,6 +59,8 @@ const loadTweets = function () {
 }
 
 $(document).ready(function () {
+
+ loadTweets()
 
  const $form = $('.submit-form')
  $form.submit(function(event) {

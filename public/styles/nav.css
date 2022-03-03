@@ -7,7 +7,6 @@ nav {
  padding-left: 1em;
  align-items: center;
  justify-content: space-between;
- z-index: 9999;
  position: fixed; 
  width: 100%; 
 }
@@ -71,6 +70,15 @@ nav {
  70% { top: -0.3em; }
  100% { top: 0; }
 }
+
+@media only screen and (max-width: 1023px) {
+ nav {
+  background: thistle;
+ }
+}
+
+
+
 
 
 

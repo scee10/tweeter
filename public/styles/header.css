@@ -9,3 +9,18 @@
  background-color: thistle;
 }
 
+@media only screen and (min-width: 1024px) {
+ #avator-header {
+  display: flex;
+  width: 30vw;
+  margin-top: 8em;
+  /* float: left; */
+  margin-left: 1.75em;
+  padding-top: 1em;
+ }
+}
+
+
+
+
+
