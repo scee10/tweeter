@@ -13,6 +13,9 @@ A simple single-page AJAX-based Twitter clone that uses jQuery, HTML5 and plain 
 ### Screenshot of desktop friendly version with new tweet 
 !["Screenshot of new tweet on desktop friendly"](https://github.com/scee10/tweeter/blob/master/docs/desktop-newtweet-screenshot.png)
 
+### Screenshot showing hover feature on icon and box
+!["Screenshot of hover feature"](https://github.com/scee10/tweeter/blob/master/docs/hover-feature.png)
+
 ## Dependencies
 
 - Express
