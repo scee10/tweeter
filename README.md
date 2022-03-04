@@ -5,13 +5,13 @@ A simple single-page AJAX-based Twitter clone that uses jQuery, HTML5 and plain 
 ## Final Product
 
 ### Screenshot of desktop friendly version
-!["Screenshot of register page"](https://github.com/scee10/tinyapp/blob/master/docs/register-page.png?raw=true)
+!["Screenshot of desktop friendly version"](https://github.com/scee10/tweeter/blob/master/docs/desktop-screenshot.png)
 
 ### Screenshot of mobile friendly version
-!["Screenshot of urls page"](https://github.com/scee10/tinyapp/blob/master/docs/urls-page.png?raw=true)
+!["Screenshot of mobile friendly version"](https://github.com/scee10/tweeter/blob/master/docs/mobile-screenshot.png)
 
 ### Screenshot of desktop friendly version with new tweet 
-!["Screenshot of urls page"](https://github.com/scee10/tinyapp/blob/master/docs/urls-page.png?raw=true)
+!["Screenshot of new tweet on desktop friendly"](https://github.com/scee10/tweeter/blob/master/docs/desktop-newtweet-screenshot.png)
 
 ## Dependencies
 
