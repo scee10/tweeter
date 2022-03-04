@@ -67,6 +67,7 @@ $(document).ready(function() {
 
   // --------------- > SUBMITTING FORM < --------------- //
   const $form = $('.submit-form');
+
   $form.submit(function(event) {
   // prevent the redirect to /tweets/ on submit
     event.preventDefault();
@@ -93,8 +94,6 @@ $(document).ready(function() {
       .then((data) => {
         $('.counter').text('140');
         $('.submit-form')[0].reset();
-      })
-      .then((data) => {
         loadTweets();
       })
       .catch(err => {

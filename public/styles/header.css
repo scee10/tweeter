@@ -1,6 +1,7 @@
 /* CSS for header with avatar image */
 #avator-header {
  height: 400px;
+ max-height: 400px;
  margin-top: 120px;
  width: 100%;
  display: flex;
